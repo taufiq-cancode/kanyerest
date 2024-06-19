@@ -15,6 +15,8 @@ return [
     |
     */
 
+    'api_token' => env('API_TOKEN', 'default_token'),
+
     'name' => env('APP_NAME', 'Laravel'),
 
     /*
