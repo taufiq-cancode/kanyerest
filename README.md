@@ -58,23 +58,7 @@ DB_PASSWORD=your_database_password
 php artisan migrate
 ```
 
-### Step 6: Install Laravel Breeze
-
-Laravel Breeze is a simple implementation of Laravel's authentication features, including login, registration, and password reset.
-
-1. Install Laravel Breeze:
-
-```bash
-composer require laravel/breeze --dev
-```
-
-2. Install Breeze:
-
-```bash
-php artisan breeze:install
-```
-
-3. Install front-end dependencies:
+### Step 6: Install front-end dependencies:
 
 ```bash
 npm install
@@ -82,12 +66,6 @@ npm install
 
 ```bash
 npm run dev
-```
-
-4. Run the migrations:
-
-```bash
-php artisan migrate
 ```
 
 ### Step 7: Running Tests
