@@ -64,31 +64,31 @@ Laravel Breeze is a simple implementation of Laravel's authentication features, 
 
 1. Install Laravel Breeze:
 
-    ```bash
-    composer require laravel/breeze --dev
-    ```
+```bash
+composer require laravel/breeze --dev
+```
 
 2. Install Breeze:
 
-    ```bash
-    php artisan breeze:install
-    ```
+```bash
+php artisan breeze:install
+```
 
 3. Install front-end dependencies:
 
-    ```bash
-    npm install
-    ```
+```bash
+npm install
+```
 
-       ```bash
-    npm run dev
-    ```
+```bash
+npm run dev
+```
 
 4. Run the migrations:
 
-    ```bash
-    php artisan migrate
-    ```
+```bash
+php artisan migrate
+```
 
 ### Step 7: Serve the application
 
