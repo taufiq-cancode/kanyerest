@@ -90,15 +90,7 @@ npm run dev
 php artisan migrate
 ```
 
-### Step 7: Serve the application
-
-```bash
-php artisan serve
-```
-
-The application will be available at `http://localhost:8000`.
-
-### Step 8: Running Tests
+### Step 7: Running Tests
 To run the PHPUnit tests included with Laravel, use the following command:
 
 ``` bash
@@ -106,6 +98,14 @@ php artisan test
 ```
 
 This command will execute all tests located in the tests/ directory.
+
+### Step 8: Serve the application
+
+```bash
+php artisan serve
+```
+
+The application will be available at `http://localhost:8000`.
 
 ## Front-End
 
