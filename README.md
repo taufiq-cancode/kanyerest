@@ -58,6 +58,30 @@ DB_PASSWORD=your_database_password
 php artisan migrate
 ```
 
+### Optional Step
+
+Check the project root directory to find the `package.json` file. If it doesnt exist, create a new `package.json` file with and paste in this content there
+```bash
+{
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "axios": "^0.27",
+    "bootstrap": "^5.1.3",
+    "laravel-mix": "^6.0.11",
+    "lodash": "^4.17.21",
+    "postcss": "^8.4.5",
+    "resolve-url-loader": "^3.1.2",
+    "sass": "^1.32.11",
+    "sass-loader": "^11.0.1",
+    "vite": "^2.9.1"
+  }
+}
+```
+
 ### Step 6: Install front-end dependencies:
 
 ```bash
