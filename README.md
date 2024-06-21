@@ -58,23 +58,31 @@ DB_PASSWORD=your_database_password
 php artisan migrate
 ```
 
-### Step 6: Install Laravel Breeze
+### Optional Step
 
-Laravel Breeze is a simple implementation of Laravel's authentication features, including login, registration, and password reset.
-
-1. Install Laravel Breeze:
-
+Check the project root directory to find the `package.json` file. If it doesnt exist, create a new `package.json` file with and paste in this content there
 ```bash
-composer require laravel/breeze --dev
+{
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "axios": "^0.27",
+    "bootstrap": "^5.1.3",
+    "laravel-mix": "^6.0.11",
+    "lodash": "^4.17.21",
+    "postcss": "^8.4.5",
+    "resolve-url-loader": "^3.1.2",
+    "sass": "^1.32.11",
+    "sass-loader": "^11.0.1",
+    "vite": "^2.9.1"
+  }
+}
 ```
 
-2. Install Breeze:
-
-```bash
-php artisan breeze:install
-```
-
-3. Install front-end dependencies:
+### Step 6: Install front-end dependencies:
 
 ```bash
 npm install
@@ -82,12 +90,6 @@ npm install
 
 ```bash
 npm run dev
-```
-
-4. Run the migrations:
-
-```bash
-php artisan migrate
 ```
 
 ### Step 7: Running Tests
@@ -124,6 +126,30 @@ Click the "Refresh Quotes" button on the quotes page to fetch new quotes. This w
 The API endpoints require authentication using Laravel Sanctum. You must include the `Authorization` header with the Bearer token obtained from the login endpoint.
 
 ### API Endpoints
+
+#### Get Random Quotes
+
+**Endpoint:** `GET /api/quotes`
+
+**Headers:**
+
+```http
+Authorization: Bearer your_access_token_here
+```
+
+**Response:**
+
+```json
+[
+    "Quote 1",
+    "Quote 2",
+    "Quote 3",
+    "Quote 4",
+    "Quote 5"
+]
+```
+
+The access token can be copied from the web after logging in or using the login/register API endpoint below
 
 #### Register a User
 
@@ -162,37 +188,15 @@ The API endpoints require authentication using Laravel Sanctum. You must include
 }
 ```
 
-#### Get Random Quotes
-
-**Endpoint:** `GET /api/quotes`
-
-**Headers:**
-
-```http
-Authorization: Bearer your_access_token_here
-```
-
-**Response:**
-
-```json
-[
-    "Quote 1",
-    "Quote 2",
-    "Quote 3",
-    "Quote 4",
-    "Quote 5"
-]
-```
-
 #### Example Using Postman
 
 To test the API directly on a already setup postman, visit `https://app.getpostman.com/join-team?invite_code=6c82a3436bbcc6b70c660ccb514f93e6&target_code=e92ff851cd5c83978d104fbe20dfd160`
 
 Or
 
-1. **Register**: Send a `POST` request to `http://localhost:8000/register` with the registration JSON payload.
-2. **Login**: Send a `POST` request to `http://localhost:8000/login` with the login JSON payload. Copy the `access_token` from the response.
-3. **Get Quotes**: Send a `GET` request to `http://localhost:8000/api/quotes` with the `Authorization` header set to `Bearer {access_token}`.
+1. **Get Quotes**: Send a `GET` request to `http://localhost:8000/api/quotes` with the `Authorization` header set to `Bearer {access_token}`.
+2. **Register**: Send a `POST` request to `http://localhost:8000/register` with the registration JSON payload.
+3. **Login**: Send a `POST` request to `http://localhost:8000/login` with the login JSON payload. Copy the `access_token` from the response.
 
 ```http
 GET /api/quotes HTTP/1.1
@@ -201,6 +205,14 @@ Authorization: Bearer your_access_token_here
 ```
 
 ### Example cURL Commands
+
+#### Get Quotes
+
+```bash
+curl -X GET http://localhost:8000/api/quotes \
+-H "Authorization: Bearer your_access_token_here"
+```
+
 
 #### Register
 
@@ -224,13 +236,6 @@ curl -X POST http://localhost:8000/login \
   "email": "johndoe@example.com",
   "password": "password"
 }'
-```
-
-#### Get Quotes
-
-```bash
-curl -X GET http://localhost:8000/api/quotes \
--H "Authorization: Bearer your_access_token_here"
 ```
 
 ### Protected Routes
