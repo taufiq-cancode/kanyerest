@@ -101,7 +101,8 @@ To run the PHPUnit tests included with Laravel, use the following command:
 php artisan test
 ```
 
-This command will execute all tests located in the tests/ directory.
+This command will execute all tests located in the tests/ directory. 
+Run this command on a new terminal so you wont have to stop the `npm run dev` process 
 
 ### Step 8: Serve the application
 
@@ -110,6 +111,7 @@ php artisan serve
 ```
 
 The application will be available at `http://localhost:8000`.
+Run this command on a new terminal so you wont have to stop the `npm run dev` process 
 
 ## Front-End
 
