@@ -123,7 +123,8 @@ Click the "Refresh Quotes" button on the quotes page to fetch new quotes. This w
 
 ## Using the API
 
-The API endpoints require authentication using Laravel Sanctum. You must include the `Authorization` header with the Bearer token obtained from the login endpoint.
+The API endpoints require authentication using Laravel Sanctum. You must include the `Authorization` header with the Bearer token which can be obtained from the web after logging in or using the login/register API.
+
 
 ### API Endpoints
 
@@ -148,8 +149,6 @@ Authorization: Bearer your_access_token_here
     "Quote 5"
 ]
 ```
-
-The access token can be copied from the web after logging in or using the login/register API endpoint below
 
 #### Register a User
 
